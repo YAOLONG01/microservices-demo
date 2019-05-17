@@ -37,7 +37,7 @@ import (
 
 const (
 	port            = "8080"
-	defaultCurrency = "USD"
+	defaultCurrency = "CNY"
 	cookieMaxAge    = 60 * 60 * 48
 
 	cookiePrefix    = "shop_"
@@ -47,12 +47,11 @@ const (
 
 var (
 	whitelistedCurrencies = map[string]bool{
+		"CNY": true,
 		"USD": true,
 		"EUR": true,
-		"CAD": true,
 		"JPY": true,
-		"GBP": true,
-		"TRY": true}
+		"GBP": true}
 )
 
 type ctxKeySessionID struct{}

@@ -1,3 +1,7 @@
+# Disclaimer
+
+All the artifacts of this repository are based on [original repository](https://github.com/GoogleCloudPlatform/microservices-demo). We add the Chinese language support to demonstrate the microservices capabilities.
+
 # Hipster Shop: Cloud-Native Microservices Demo Application
 
 This project contains a 10-tier microservices application. The application is a

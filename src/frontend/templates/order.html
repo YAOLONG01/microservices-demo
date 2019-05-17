@@ -7,19 +7,19 @@
                 <div class="row mt-5 py-2">
                     <div class="col">
                     <h3>
-                        Your order is complete!
+                        您的订单已经完成！
                     </h3>
                     <p>
-                        Order Confirmation ID: <strong>{{.order.OrderId}}</strong>
+                        订单确认ID: <strong>{{.order.OrderId}}</strong>
                         <br>
-                        Shipping Tracking ID: <strong>{{.order.ShippingTrackingId}}</strong>
+                        送货跟踪ID: <strong>{{.order.ShippingTrackingId}}</strong>
                     </p>
                     <p>
-                        Shipping Cost: <strong>{{renderMoney .order.ShippingCost}}</strong>
+                        运费: <strong>{{renderMoney .order.ShippingCost}}</strong>
                         <br>
-                        Total Paid: <strong>{{renderMoney .total_paid}}</strong>
+                        总付款: <strong>{{renderMoney .total_paid}}</strong>
                     </p>
-                    <a class="btn btn-primary" href="/" role="button">Browse other products &rarr; </a>
+                    <a class="btn btn-primary" href="/" role="button">浏览其他产品 &rarr; </a>
                     </div>
                 </div>
                 <hr/>
