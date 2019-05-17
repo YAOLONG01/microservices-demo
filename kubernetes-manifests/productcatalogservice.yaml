@@ -15,7 +15,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: productcatalogservice
+  name: productcatalogservice-v1
   labels:
     app: productcatalogservice
     version: v1
@@ -23,10 +23,12 @@ spec:
   selector:
     matchLabels:
       app: productcatalogservice
+      version: v1
   template:
     metadata:
       labels:
         app: productcatalogservice
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -55,6 +57,102 @@ spec:
             cpu: 200m
             memory: 128Mi
 ---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productcatalogservice-v2
+  labels:
+    app: productcatalogservice
+    version: v2
+spec:
+  selector:
+    matchLabels:
+      app: productcatalogservice
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: productcatalogservice
+        version: v2
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+      - name: server
+        image: registry.cn-hangzhou.aliyuncs.com/ack/istio-demo-productcatalogservice:0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3550
+        env:
+        - name: PORT
+          value: "3550"
+        - name: CATALOG_VERSION
+          value: "v2"  
+        readinessProbe:
+          exec:
+            command: ["/bin/grpc_health_probe", "-addr=:3550"]
+        livenessProbe:
+          exec:
+            command: ["/bin/grpc_health_probe", "-addr=:3550"]
+#        env:
+#          - name: JAEGER_SERVICE_ADDR
+#            value: "jaeger-collector:14268"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: productcatalogservice-v3
+  labels:
+    app: productcatalogservice
+    version: v3
+spec:
+  selector:
+    matchLabels:
+      app: productcatalogservice
+      version: v3
+  template:
+    metadata:
+      labels:
+        app: productcatalogservice
+        version: v3
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+      - name: server
+        image: registry.cn-hangzhou.aliyuncs.com/ack/istio-demo-productcatalogservice:0.1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3550
+        env:
+        - name: PORT
+          value: "3550"
+        - name: CATALOG_VERSION
+          value: "v3"    
+        readinessProbe:
+          exec:
+            command: ["/bin/grpc_health_probe", "-addr=:3550"]
+        livenessProbe:
+          exec:
+            command: ["/bin/grpc_health_probe", "-addr=:3550"]
+#        env:
+#          - name: JAEGER_SERVICE_ADDR
+#            value: "jaeger-collector:14268"
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 200m
+            memory: 128Mi
+---    
 apiVersion: v1
 kind: Service
 metadata:

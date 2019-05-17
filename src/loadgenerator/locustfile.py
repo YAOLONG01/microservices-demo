@@ -18,21 +18,14 @@ import random
 from locust import HttpLocust, TaskSet
 
 products = [
-    '0PUK6V6EV0',
-    '1YMWWN1N4O',
-    '2ZYFJ3GM2N',
     '66VCHSJNUP',
-    '6E92ZMYYFZ',
-    '9SIQT8TOJO',
-    'L9ECAV7KIM',
-    'LS4PSXUNUM',
     'OLJCESPC7Z']
 
 def index(l):
     l.client.get("/")
 
 def setCurrency(l):
-    currencies = ['EUR', 'USD', 'JPY', 'CAD']
+    currencies = ['EUR', 'USD', 'JPY', 'CNY']
     l.client.post("/setCurrency",
         {'currency_code': random.choice(currencies)})
 

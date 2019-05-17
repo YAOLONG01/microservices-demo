@@ -213,7 +213,17 @@ type productCatalog struct{}
 func readCatalogFile(catalog *pb.ListProductsResponse) error {
 	catalogMutex.Lock()
 	defer catalogMutex.Unlock()
-	catalogJSON, err := ioutil.ReadFile("products.json")
+
+	ver := os.Getenv("CATALOG_VERSION")
+	var fileName string
+	if ver == "v2" {
+		fileName = "products.2.json"
+	} else if ver == "v3" {
+		fileName = "products.3.json"
+	} else {
+		fileName = "products.1.json"  //still use this for demo
+	}
+	catalogJSON, err := ioutil.ReadFile(fileName)
 	if err != nil {
 		log.Fatalf("failed to open product catalog json file: %v", err)
 		return err
