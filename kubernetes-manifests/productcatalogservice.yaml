@@ -16,6 +16,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productcatalogservice
+  labels:
+    app: productcatalogservice
+    version: v1
 spec:
   selector:
     matchLabels:
@@ -28,7 +31,8 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: productcatalogservice
+        image: registry.cn-hangzhou.aliyuncs.com/ack/istio-demo-productcatalogservice:0.1
+        imagePullPolicy: Always
         ports:
         - containerPort: 3550
         env:
@@ -55,6 +59,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: productcatalogservice
+  labels:
+    app: productcatalogservice
 spec:
   type: ClusterIP
   selector:

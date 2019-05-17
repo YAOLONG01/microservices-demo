@@ -172,37 +172,37 @@ public final class AdService {
     Ad camera =
         Ad.newBuilder()
             .setRedirectUrl("/product/2ZYFJ3GM2N")
-            .setText("Film camera for sale. 50% off.")
+            .setText("胶片相机出售。50折优惠。")
             .build();
     Ad lens =
         Ad.newBuilder()
             .setRedirectUrl("/product/66VCHSJNUP")
-            .setText("Vintage camera lens for sale. 20% off.")
+            .setText("老式相机镜头出售。20折优惠。")
             .build();
     Ad recordPlayer =
         Ad.newBuilder()
             .setRedirectUrl("/product/0PUK6V6EV0")
-            .setText("Vintage record player for sale. 30% off.")
+            .setText("老式唱机出售。30％的折扣。")
             .build();
     Ad bike =
         Ad.newBuilder()
             .setRedirectUrl("/product/9SIQT8TOJO")
-            .setText("City Bike for sale. 10% off.")
+            .setText("城市自行车出售。九折优惠。")
             .build();
     Ad baristaKit =
         Ad.newBuilder()
             .setRedirectUrl("/product/1YMWWN1N4O")
-            .setText("Home Barista kitchen kit for sale. Buy one, get second kit for free")
+            .setText(" 家庭厨房套件出售。买一个，免费获得第二个套件!")
             .build();
     Ad airPlant =
         Ad.newBuilder()
             .setRedirectUrl("/product/6E92ZMYYFZ")
-            .setText("Air plants for sale. Buy two, get third one for free")
+            .setText("空气净化植物出售。买两个，免费获得第三个!")
             .build();
     Ad terrarium =
         Ad.newBuilder()
             .setRedirectUrl("/product/L9ECAV7KIM")
-            .setText("Terrarium for sale. Buy one, get second one for free")
+            .setText("水晶球出售。买一个，免费获得第二个！")
             .build();
     return ImmutableListMultimap.<String, Ad>builder()
         .putAll("photography", camera, lens)
@@ -279,13 +279,13 @@ public final class AdService {
      */
     RpcViews.registerAllViews();
 
-    new Thread(
-            new Runnable() {
-              public void run() {
-                initStackdriver();
-              }
-            })
-        .start();
+    // new Thread(
+    //         new Runnable() {
+    //           public void run() {
+    //             initStackdriver();
+    //           }
+    //         })
+    //     .start();
 
     // Register Jaeger
     initJaeger();

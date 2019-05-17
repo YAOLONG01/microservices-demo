@@ -2,11 +2,11 @@
     "products": [
         {
             "id": "OLJCESPC7Z",
-            "name": "Vintage Typewriter",
-            "description": "This typewriter looks good in your living room.",
+            "name": "老式打字机",
+            "description": "这台打字机在你的起居室看起来不错。",
             "picture": "/static/img/products/typewriter.jpg",
             "priceUsd": {
-                "currencyCode": "USD",
+                "currencyCode": "CNY",
                 "units": 67,
                 "nanos": 990000000
             },
@@ -14,11 +14,11 @@
         },
         {
             "id": "66VCHSJNUP",
-            "name": "Vintage Camera Lens",
-            "description": "You won't have a camera to use it and it probably doesn't work anyway.",
+            "name": "老式相机镜头",
+            "description": "你不会有相机使用它，它可能无论如何都不起作用。",
             "picture": "/static/img/products/camera-lens.jpg",
             "priceUsd": {
-                "currencyCode": "USD",
+                "currencyCode": "CNY",
                 "units": 12,
                 "nanos": 490000000
             },
@@ -26,22 +26,22 @@
         },
         {
             "id": "1YMWWN1N4O",
-            "name": "Home Barista Kit",
-            "description": "Always wanted to brew coffee with Chemex and Aeropress at home?",
+            "name": "家庭咖啡套件",
+            "description": "想在家里煮咖啡吗？",
             "picture": "/static/img/products/barista-kit.jpg",
             "priceUsd": {
-                "currencyCode": "USD",
+                "currencyCode": "CNY",
                 "units": 124
             },
             "categories": ["cookware"]
         },
         {
             "id": "L9ECAV7KIM",
-            "name": "Terrarium",
-            "description": "This terrarium will looks great in your white painted living room.",
+            "name": "水晶球",
+            "description": "这个水晶球在您的白色客厅看起来很棒。",
             "picture": "/static/img/products/terrarium.jpg",
             "priceUsd": {
-                "currencyCode": "USD",
+                "currencyCode": "CNY",
                 "units": 36,
                 "nanos": 450000000
             },
@@ -49,22 +49,22 @@
         },
         {
             "id": "2ZYFJ3GM2N",
-            "name": "Film Camera",
-            "description": "This camera looks like it's a film camera, but it's actually digital.",
+            "name": "胶片相机",
+            "description": "这款相机看起来像是一部胶卷相机，但它实际上是数码相机。",
             "picture": "/static/img/products/film-camera.jpg",
             "priceUsd": {
-                "currencyCode": "USD",
+                "currencyCode": "CNY",
                 "units": 2245
             },
             "categories": ["photography", "vintage"]
         },
         {
             "id": "0PUK6V6EV0",
-            "name": "Vintage Record Player",
-            "description": "It still works.",
+            "name": "老式唱片机",
+            "description": "它仍然可以正常工作哦。",
             "picture": "/static/img/products/record-player.jpg",
             "priceUsd": {
-                "currencyCode": "USD",
+                "currencyCode": "CNY",
                 "units": 65,
                 "nanos": 500000000
             },
@@ -72,11 +72,11 @@
         },
         {
             "id": "LS4PSXUNUM",
-            "name": "Metal Camping Mug",
-            "description": "You probably don't go camping that often but this is better than plastic cups.",
+            "name": "金属野营杯",
+            "description": "你可能不经常去露营，但这比塑料杯更好。",
             "picture": "/static/img/products/camp-mug.jpg",
             "priceUsd": {
-                "currencyCode": "USD",
+                "currencyCode": "CNY",
                 "units": 24,
                 "nanos": 330000000
             },
@@ -84,11 +84,11 @@
         },
         {
             "id": "9SIQT8TOJO",
-            "name": "City Bike",
-            "description": "This single gear bike probably cannot climb the hills of San Francisco.",
+            "name": "城市自行车",
+            "description": "这辆自行车可能无法帮助你爬上一座高山。",
             "picture": "/static/img/products/city-bike.jpg",
             "priceUsd": {
-                "currencyCode": "USD",
+                "currencyCode": "CNY",
                 "units": 789,
                 "nanos": 500000000
             },
@@ -96,11 +96,11 @@
         },
         {
             "id": "6E92ZMYYFZ",
-            "name": "Air Plant",
-            "description": "Have you ever wondered whether air plants need water? Buy one and figure out.",
+            "name": "空气净化植物",
+            "description": "你有没有想过空气净化植物是否需要水？买一个并搞清楚。",
             "picture": "/static/img/products/air-plant.jpg",
             "priceUsd": {
-                "currencyCode": "USD",
+                "currencyCode": "CNY",
                 "units": 12,
                 "nanos": 300000000
             },

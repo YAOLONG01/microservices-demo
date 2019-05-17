@@ -16,19 +16,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: paymentservice
+  labels:
+    app: paymentservice
+    version: v1
 spec:
   selector:
     matchLabels:
       app: paymentservice
+      version: v1
   template:
     metadata:
       labels:
         app: paymentservice
+        version: v1
     spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: paymentservice
+        image: registry.cn-hangzhou.aliyuncs.com/ack/istio-demo-paymentservice:0.1
+        imagePullPolicy: Always
         ports:
         - containerPort: 50051
         env:
@@ -52,6 +58,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: paymentservice
+  labels:
+    app: paymentservice
 spec:
   type: ClusterIP
   selector:

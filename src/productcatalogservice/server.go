@@ -75,7 +75,7 @@ func init() {
 
 func main() {
 	go initTracing()
-	go initProfiling("productcatalogservice", "1.0.0")
+	//go initProfiling("productcatalogservice", "1.0.0")
 	flag.Parse()
 
 	// set injected latency
@@ -183,7 +183,7 @@ func initStackDriverTracing() {
 
 func initTracing() {
 	initJaegerTracing()
-	initStackDriverTracing()
+	//initStackDriverTracing()
 }
 
 func initProfiling(service, version string) {

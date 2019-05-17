@@ -16,18 +16,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: checkoutservice
+  labels:
+    app: checkoutservice
+    version: v1
 spec:
   selector:
     matchLabels:
       app: checkoutservice
+      version: v1
   template:
     metadata:
       labels:
         app: checkoutservice
+        version: v1
     spec:
       containers:
         - name: server
-          image: checkoutservice
+          image: registry.cn-hangzhou.aliyuncs.com/ack/istio-demo-checkoutservice:0.1
+          imagePullPolicy: Always
           ports:
           - containerPort: 5050
           readinessProbe:
@@ -65,6 +71,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: checkoutservice
+  labels:
+    app: checkoutservice
 spec:
   type: ClusterIP
   selector:

@@ -16,18 +16,24 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
+  labels:
+    app: frontend
+    version: v1
 spec:
   selector:
     matchLabels:
       app: frontend
+      version: v1
   template:
     metadata:
       labels:
         app: frontend
+        version: v1
     spec:
       containers:
         - name: server
-          image: frontend
+          image: registry.cn-hangzhou.aliyuncs.com/ack/istio-demo-frontend:0.1
+          imagePullPolicy: Always
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -77,6 +83,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
+  labels:
+    app: frontend
 spec:
   type: ClusterIP
   selector:
@@ -90,6 +98,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend-external
+  labels:
+    app: frontend-external
 spec:
   type: LoadBalancer
   selector:

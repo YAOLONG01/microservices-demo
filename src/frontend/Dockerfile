@@ -3,8 +3,8 @@ FROM golang:1.12-alpine as builder
 #      wget -qO/go/bin/dep https://github.com/golang/dep/releases/download/v0.5.0/dep-linux-amd64 && \
 #      chmod +x /go/bin/dep
 
-#ENV PROJECT github.com/GoogleCloudPlatform/microservices-demo/src/frontend
-WORKDIR /go/src/frontend
+ENV PROJECT github.com/GoogleCloudPlatform/microservices-demo/src/frontend
+WORKDIR /go/src/$PROJECT
 
 # restore dependencies
 #COPY Gopkg.* ./

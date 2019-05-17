@@ -57,7 +57,7 @@ func init() {
 
 func main() {
 	go initTracing()
-	go initProfiling("shippingservice", "1.0.0")
+	//go initProfiling("shippingservice", "1.0.0")
 
 	port := defaultPort
 	if value, ok := os.LookupEnv("PORT"); ok {
@@ -186,7 +186,7 @@ func initStackDriverTracing() {
 
 func initTracing() {
 	initJaegerTracing()
-	initStackDriverTracing()
+	//initStackDriverTracing()
 }
 
 func initProfiling(service, version string) {

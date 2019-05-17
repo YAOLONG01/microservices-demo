@@ -70,7 +70,7 @@ type checkoutService struct {
 
 func main() {
 	go initTracing()
-	go initProfiling("checkoutservice", "1.0.0")
+	//go initProfiling("checkoutservice", "1.0.0")
 
 	port := listenPort
 	if os.Getenv("PORT") != "" {
@@ -155,7 +155,7 @@ func initStackDriverTracing() {
 
 func initTracing() {
 	initJaegerTracing()
-	initStackDriverTracing()
+	//initStackDriverTracing()
 }
 
 func initProfiling(service, version string) {

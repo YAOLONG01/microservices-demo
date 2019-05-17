@@ -41,7 +41,7 @@ spec:
           value: "frontend:80"
       containers:
       - name: main
-        image: loadgenerator
+        image: registry.cn-hangzhou.aliyuncs.com/ack/istio-demo-loadgenerator:0.1
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
