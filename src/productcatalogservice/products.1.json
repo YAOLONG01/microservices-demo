@@ -23,6 +23,88 @@
                 "nanos": 490000000
             },
             "categories": ["photography", "vintage"]
+        },
+        {
+            "id": "1YMWWN1N4O",
+            "name": "家庭咖啡套件",
+            "description": "想在家里煮咖啡吗？",
+            "picture": "/static/img/products/barista-kit.jpg",
+            "priceUsd": {
+                "currencyCode": "CNY",
+                "units": 124
+            },
+            "categories": ["cookware"]
+        },
+        {
+            "id": "L9ECAV7KIM",
+            "name": "水晶球",
+            "description": "这个水晶球在您的白色客厅看起来很棒。",
+            "picture": "/static/img/products/terrarium.jpg",
+            "priceUsd": {
+                "currencyCode": "CNY",
+                "units": 36,
+                "nanos": 450000000
+            },
+            "categories": ["gardening"]
+        },
+        {
+            "id": "2ZYFJ3GM2N",
+            "name": "胶片相机",
+            "description": "这款相机看起来像是一部胶卷相机，但它实际上是数码相机。",
+            "picture": "/static/img/products/film-camera.jpg",
+            "priceUsd": {
+                "currencyCode": "CNY",
+                "units": 2245
+            },
+            "categories": ["photography", "vintage"]
+        },
+        {
+            "id": "0PUK6V6EV0",
+            "name": "老式唱片机",
+            "description": "它仍然可以正常工作哦。",
+            "picture": "/static/img/products/record-player.jpg",
+            "priceUsd": {
+                "currencyCode": "CNY",
+                "units": 65,
+                "nanos": 500000000
+            },
+            "categories": ["music", "vintage"]
+        },
+        {
+            "id": "LS4PSXUNUM",
+            "name": "金属野营杯",
+            "description": "你可能不经常去露营，但这比塑料杯更好。",
+            "picture": "/static/img/products/camp-mug.jpg",
+            "priceUsd": {
+                "currencyCode": "CNY",
+                "units": 24,
+                "nanos": 330000000
+            },
+            "categories": ["cookware"]
+        },
+        {
+            "id": "9SIQT8TOJO",
+            "name": "城市自行车",
+            "description": "这辆自行车可能无法帮助你爬上一座高山。",
+            "picture": "/static/img/products/city-bike.jpg",
+            "priceUsd": {
+                "currencyCode": "CNY",
+                "units": 789,
+                "nanos": 500000000
+            },
+            "categories": ["cycling"]
+        },
+        {
+            "id": "6E92ZMYYFZ",
+            "name": "空气净化植物",
+            "description": "你有没有想过空气净化植物是否需要水？买一个并搞清楚。",
+            "picture": "/static/img/products/air-plant.jpg",
+            "priceUsd": {
+                "currencyCode": "CNY",
+                "units": 12,
+                "nanos": 300000000
+            },
+            "categories": ["gardening"]
         }
     ]
 }
