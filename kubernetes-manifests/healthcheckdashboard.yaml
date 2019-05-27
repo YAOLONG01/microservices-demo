@@ -1,0 +1,114 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grpc-hc-config
+data:
+  config.yaml: |
+    general:
+      healthcheckEvery: 2s
+      httpClientTimeout: 5s
+      refreshDashboardEvery: 5s
+    groups:
+      - name: "region: cn-beijing"
+        nodes:
+          - name: Frontend
+            endpoint: http://frontend:80
+            type: http_check
+          - name: productcatalogservice
+            type: grpc_check
+            parameters:
+              addr: "productcatalogservice:3550"
+          - name: recommendationservice
+            type: grpc_check
+            parameters:
+              addr: "recommendationservice:8080"
+          - name: adservice
+            type: grpc_check
+            parameters:
+              addr: "adservice:9555"
+          - name: cartservice
+            type: grpc_check
+            parameters:
+              addr: "cartservice:7070"
+          - name: checkoutservice
+            type: grpc_check
+            parameters:
+              addr: "checkoutservice:5050"
+          - name: currencyservice
+            type: grpc_check
+            parameters:
+              addr: "currencyservice:7000"
+          - name: emailservice
+            type: grpc_check
+            parameters:
+              addr: "emailservice:5000"
+          - name: paymentservice
+            type: grpc_check
+            parameters:
+              addr: "paymentservice:50051"
+          - name: shippingservice
+            type: grpc_check
+            parameters:
+              addr: "shippingservice:50051"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthcheckdashboard
+  labels:
+    app: healthcheckdashboard
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      app: healthcheckdashboard
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: healthcheckdashboard
+        version: v1
+      annotations:
+        sidecar.istio.io/inject: "false"
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+      - name: server
+        image: registry.cn-hangzhou.aliyuncs.com/ack/istio-demo-grpc-healthcheck-probe:v0.1
+        imagePullPolicy: Always
+        command:
+          - /usr/local/bin/grpchealthcheck 
+        args:
+          - "-config=/grpchealthcheck/config.yaml"
+          - "-staticDir=/usr/local/bin/frontend"
+        ports:
+        - containerPort: 9001
+        volumeMounts:
+        - name: configuration
+          mountPath: "/grpchealthcheck"
+        resources:
+          requests:
+            cpu: 200m
+            memory: 180Mi
+          limits:
+            cpu: 300m
+            memory: 300Mi
+      volumes:
+      - name: configuration
+        configMap:
+          name: grpc-hc-config      
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: healthcheckdashboard
+  labels:
+    app: healthcheckdashboard
+spec:
+  type: ClusterIP
+  selector:
+    app: healthcheckdashboard
+  ports:
+  - name: http
+    port: 9001
+    targetPort: 9001
