@@ -1,0 +1,17 @@
+apiVersion: istio.alibabacloud.com/v1beta1
+kind: RemoteIstio
+metadata:
+  name: localityaware-bj
+  namespace: istio-system
+spec:
+  autoInjectionNamespaces:
+  - default
+  dockerImage:
+    region: cn-beijing
+  hub: registry.cn-beijing.aliyuncs.com/aliacs-app-catalog
+  includeIPRanges: '*'
+  proxy: {}
+  security: {}
+  sidecarInjector:
+    enabled: true
+    replicaCount: 1

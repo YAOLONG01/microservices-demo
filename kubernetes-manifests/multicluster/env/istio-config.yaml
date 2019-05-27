@@ -1,0 +1,109 @@
+apiVersion: istio.alibabacloud.com/v1beta1
+kind: Istio
+metadata:
+  name: istio-config
+  namespace: istio-system
+spec:
+  caCertsSecret: cacerts
+  certManager:
+    enabled: false
+    tag: v0.6.2
+  defaultPodDisruptionBudget:
+    enabled: false
+  dockerImage: {}
+  galley:
+    enabled: true
+    replicaCount: 1
+  grafana:
+    enabled: true
+    persist: true
+    replicaCount: 1
+    security:
+      adminPassword: admin
+      adminUser: admin
+      enabled: true
+    serviceType: ClusterIP
+    storageSize: 20Gi
+    tag: 6.0.2
+  hub: registry-vpc.cn-hangzhou.aliyuncs.com/aliacs-app-catalog
+  imagePullPolicy: IfNotPresent
+  includeIPRanges: '*'
+  kiali:
+    authStrategy: login
+    dashboard:
+      passphrase: admin
+      username: admin
+    enabled: true
+    replicaCount: 1
+    serviceType: ClusterIP
+    tag: v0.19
+  localityLbSetting:
+    failover:
+    - from: cn-beijing
+      to: cn-hangzhou
+    - from: cn-hangzhou
+      to: cn-beijing
+  logging:
+    level: default:info
+  meshExpansion:
+    enabled: false
+  mixer:
+    enabled: true
+    maxReplicas: 5
+    minReplicas: 1
+    replicaCount: 1
+  mtls:
+    enabled: false
+  multiCluster:
+    enabled: true
+    gatewaySLB: intranet
+    mode: flat
+  nodeAgent:
+    enabled: false
+  outboundTrafficPolicy:
+    mode: REGISTRY_ONLY
+  pilot:
+    enableLocalityLB: true
+    enabled: true
+    maxReplicas: 5
+    minReplicas: 1
+    replicaCount: 1
+    traceSampling: 100
+  prometheus:
+    enabled: true
+    persist: false
+    replicaCount: 1
+    retention: 720h
+    scrapeInterval: 15s
+    security: true
+    serviceType: ClusterIP
+    tag: v2.3.1
+  proxy:
+    logLevel: warning
+  sds:
+    enabled: false
+  security:
+    enabled: true
+    selfSigned: true
+  sidecarInjector:
+    enabled: true
+    replicaCount: 1
+  tracingOnExtZipkin:
+    enabled: false
+    externalZipkin: {}
+    replicaCount: 1
+  tracingOnSls:
+    enabled: false
+    serviceType: ClusterIP
+    storage:
+      aliyunSls:
+        collector:
+          replicaCount: 1
+        endpoint: cn-hangzhou-intranet.log.aliyuncs.com
+        logstore: istio-tracing
+        project: 
+        query:
+          replicaCount: 1
+        tag: 0.1.8
+  useMCP: true
+  version: 1.1.4

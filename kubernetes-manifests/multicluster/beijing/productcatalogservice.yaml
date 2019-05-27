@@ -15,7 +15,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: productcatalogservice-hangzhou
+  name: productcatalogservice-beijing
   labels:
     app: productcatalogservice
     version: beijing
