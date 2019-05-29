@@ -6,6 +6,6 @@ spec:
   host: frontend
   trafficPolicy:
     outlierDetection:
-      consecutiveErrors: 7
-      interval: 5m
-      baseEjectionTime: 15m
+      consecutiveErrors: 3
+      interval: 2m
+      baseEjectionTime: 1m
