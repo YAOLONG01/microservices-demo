@@ -2,18 +2,6 @@
 
     {{ template "header" . }}
     <main role="main">
-        <section class="jumbotron text-center mb-0"
-		 {{ with $.banner_color }}
-		     style="background-color: {{.}};"
-		 {{ end }}
-		>
-            <div class="container">
-                <p class="lead text-muted">
-                    <a href="/"<img class="my-course-banner" style="width:100%" src="/static/img/products/course-banner.png"></a>
-                </p>
-            </div>
-        </section>
-
         <div class="py-5 bg-light">
             <div class="container">
             <div class="row">
@@ -45,9 +33,7 @@
                 </div>
                 {{ end }}
             </div>
-            <div class="row">
-                {{ with $.ad }}{{ template "text_ad" . }}{{ end}}
-            </div>
+
             </div>
         </div>
     </main>
