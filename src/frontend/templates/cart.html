@@ -5,19 +5,19 @@
         <div class="py-5">
             <div class="container bg-light py-3 px-lg-5 py-lg-5">
                 {{ if eq (len $.items) 0 }}
-                    <h3>你的购物车是空的！</h3>
-                    <p>您添加到购物车的商品将显示在此处。</p>
-                    <a class="btn btn-primary" href="/" role="button">浏览产品 &rarr; </a>
+                    <h3>你的收藏夹是空的！</h3>
+                    <p>您添加到收藏夹的商品将显示在此处。</p>
+                    <a class="btn btn-primary" href="/" role="button">浏览 &rarr; </a>
                 {{ else }}
 
                     <div class="row mb-3 py-2">
                         <div class="col">
-                            <h3>购物车中有{{ len $.items }} 件商品</h3>
+                            <h3>收藏夹中有{{ len $.items }} 件商品</h3>
                         </div>
                         <div class="col text-right">
                             <form method="POST" action="/cart/empty">
-                                <button class="btn btn-secondary" type="submit">清空购物车</button>
-                                <a class="btn btn-info" href="/" role="button">浏览更多产品 &rarr; </a>
+                                <button class="btn btn-secondary" type="submit">清空收藏夹</button>
+                                <a class="btn btn-info" href="/" role="button">浏览更多 &rarr; </a>
                             </form>
                     
                         </div>
