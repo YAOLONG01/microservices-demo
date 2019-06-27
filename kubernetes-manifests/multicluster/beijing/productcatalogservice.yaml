@@ -33,7 +33,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: registry.cn-hangzhou.aliyuncs.com/ack/istio-demo-productcatalogservice:0.1
+        image: registry.cn-hangzhou.aliyuncs.com/ack/unicareer-demo-productcatalogservice:0.1
         imagePullPolicy: Always
         ports:
         - containerPort: 3550

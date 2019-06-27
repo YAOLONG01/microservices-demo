@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: registry.cn-hangzhou.aliyuncs.com/ack/istio-demo-frontend:0.1
+          image: registry.cn-hangzhou.aliyuncs.com/ack/unicareer-demo-frontend:0.1
           imagePullPolicy: Always
           ports:
           - containerPort: 8080
